@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Click</p>
+
+<button onclick="formatPhoneNumber()">Try it</button>
+
+<script>
+function myFunction()
+{
+var str = "Give 100%!"; 
+var patt1 = /\D/g;
+var result = str.match(patt1);
+document.getElementById("demo").innerHTML=result;
+}
+
+var phoneNumberString = 2123123;
+
+function formatPhoneNumber(phoneNumberString) {
+	var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+	var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
+	if (match) {
+	  var intlCode = (match[1] ? '49' : '')
+      return [intlCode, match[2], match[3], match[4]].join('')
+	}
+    return null
+    document.getElementById("demo").innerHTML=match;
+  }
+  
+phonenumberlength:
+
+	if (phone.length >= 17 || cleaned.match(/\D/g)) {
+
+        return false;
+	}
+	
+
+</script>
+
+</body>
+</html>
