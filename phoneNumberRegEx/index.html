@@ -24,17 +24,26 @@ function formatPhoneNumber(phoneNumberString) {
 	  var intlCode = (match[1] ? '49' : '')
       return [intlCode, match[2], match[3], match[4]].join('')
 	}
+	console.log(phoneNumberString)
     return null
-    document.getElementById("demo").innerHTML=match;
+
   }
   
 phonenumberlength:
 
-	if (phone.length >= 17 || cleaned.match(/\D/g)) {
+	if (cleaned.match(/\D/g)) { Prio 1
 
         return false;
 	}
+
+	if (phone.length >= 17) { Prio 3
+
+	return false;
+	}
 	
+
+
+	phone.length >= 17
 
 </script>
 
