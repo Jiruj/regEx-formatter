@@ -20,3 +20,25 @@ function formatPhoneNumber(phoneNumberString) {
 }
 
 formatPhoneNumber();
+
+Version 2:
+
+function normalize(phone) {
+  //normalize string and remove all unnecessary characters
+  phone = phone.replace(/[^\d]/g, "");
+
+  //check if number length equals to 10
+  if (phone.length >= 17) {
+    //reformat and return phone number
+    return false
+  } else {
+    return phone.replace(/(\d{3})(\d{3})(\d{4})/, "$1$2$3");
+
+  }
+
+  return null;
+}
+
+var phone = '(123)456781195345';
+phone = normalize(phone);
+alert(phone);
