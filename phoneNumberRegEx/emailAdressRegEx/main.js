@@ -1,16 +1,12 @@
-function formatMailAdress(mailAdressString) {
-	var match = cleaned.match(/[\w\-.]+@([\w-]+\.)+[\w-\.]+/)
-	if (match) {
-	  var intlCode = (match[1] ? '49' : '')
-	  return [intlCode, match[2], match[3], match[4]].join('')
-	}
-	return null
-  }
+function normalize(email) {
   
-mailAdresslength:
+if (email.match(/[\w-]+@([\w-]+\.)+[\w-]+/)) {
+   return email;
+} else {
+  return false; 
+  }
 
-	if (phone.length >= 17 || cleaned.match(/\D/g)) {
-
-        return false;
-	}
-	
+}
+var email = 'blubbl@ubweb.de';
+email = normalize(email);
+alert(email);
