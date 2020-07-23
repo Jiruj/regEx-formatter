@@ -1,6 +1,6 @@
 function normalize(email) {
   
-if (email.match(/^[\w-]+@([\w-]+\.)+[\w-]+/)) {
+if (email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]+$/)) {
    return email; 
 } else {
   return false; 
