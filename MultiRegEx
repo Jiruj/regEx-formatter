@@ -1,0 +1,94 @@
+
+//MultiRegEx RC4 "Bernie"
+
+function check(raw) {
+
+// RegEx
+var email = /^[\w-\.]+@([\w-]+\.)+[\w-]+$/.test(raw);
+var phone = /^[^\D]+$/.test(raw);
+var hostname = /^(?:www|https\:|http\:|\w)(.*).[A-Za-z0-9_]+.[A-Za-z]+$/.test(raw);
+
+// Debugging
+// console.log(email);
+// console.log(phone);
+// console.log(hostname);
+
+// Prüfen von Treffern
+if (email){
+    return 0 
+}else if(phone){
+    return 1
+}else if(hostname){
+    return 2
+}else{
+    return false
+}
+}
+  
+var raw = '491523456781235';    // Input im Eingabefeld
+console.log(raw);
+result = check(raw); // returns detected input type encoded as 0: Email; 1: Phone; 2: Hostname
+console.log(result);
+
+//Weiterverwendung vom Ergebnis
+switch(result){
+case 0:
+console.log("email");
+break;
+case 1:
+console.log("phone");
+break;
+case 2:
+console.log("hostname");
+break;
+}
+
+/*
+TestCases:
+
+hi@web.de
+da@wegf.de
+@wb.de
+14564564564
+regex101.com
+regex101
+1a1s1d1f1
+5645g64542
+test+test@gmx.de
+email@example.com
+firstname.lastname@example.com
+email@subdomain.example.com
+firstname+lastname@example.com
+email@123.123.123.123
+email@[123.123.123.123]
+"email"@example.com
+1234567890@example.com
+email@example-one.com
+_______@example.com
+email@example.name
+email@example.museum
+email@example.co.jp
+firstname-lastname@example.com
+
+soeren.link
+123.de
+123123123.de
+web.de
+web.co.uk
+123qwv.de
+12.de.de
+de.123123
+
+
+
+12345678901
+12345678901x1234
+345678901x1234
+12344678901
+12345678901
+12345678901
+12345678901
++4112345678
++441234567890
+
+*/
