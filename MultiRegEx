@@ -27,7 +27,7 @@ if (email){
   
 var raw = '491523456781235';    // Input im Eingabefeld
 console.log(raw);
-result = check(raw); // returns detected input type encoded as 0: Email; 1: Phone; 2: Hostname
+result = check(raw); // Erkannte Eingabe: 0: Email; 1: Phone; 2: Hostname
 console.log(result);
 
 //Weiterverwendung vom Ergebnis
